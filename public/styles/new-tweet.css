@@ -1,0 +1,32 @@
+.new-tweet {
+  width: 100%;
+}
+
+#composeTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.formAndLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: dotted grey 4px;
+  padding-bottom: 16px;
+}
+
+.buttonAndCounter {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", sans-serif;
+  padding-top: 16px;
+}
+
+button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+label {
+  font-weight: bold;
+}
