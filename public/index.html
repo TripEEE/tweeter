@@ -23,12 +23,15 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/existing-tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -40,7 +43,7 @@
       <i class="fa-solid fa-angles-down"></i>
     </div>
   </nav>
-  <header>
+  <header class="header-top">
     <div id="avatarAndName">
       <div>
         <img src="/images/profile-hex.png">
@@ -57,16 +60,34 @@
       <div id="composeTitle">
         <h2>Compose Tweet</h2>
       </div>
-      <form method="POST" action="/tweets/">
+      <form class="tweetForm" method="POST" action="/tweets/">
         <div class="formAndLabel">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text" width="2" cols="80"></textarea>
         </div>
         <div class="buttonAndCounter">
           <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+          <output name="counter" id="counter" for="tweet-text">140</output>
         </div>
       </form>
+      <article class="articleContainer">
+        <header class="articleHeader">
+          <div class="articleFirstName">
+            <i class="fa-regular fa-face-kiss-wink-heart"></i>
+            <p>Sarah</p>
+          </div>
+          <p class="articleUsername">@VoteForSarah</p>
+        </header>
+        <h6>Please vote for me!</h6>
+        <footer class="articleFooter">
+          <p>10 days ago</p>
+          <ul>
+            <li><i class="fa-solid fa-flag"></i></li>
+            <li><i class="fa-sharp fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-heart"></i></li>
+          </ul>
+        </footer>
+      </article>
     </section>
   </main>
 </body>
