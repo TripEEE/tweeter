@@ -1,3 +1,7 @@
+.tweetContainer {
+  width: 100%;
+}
+
 .articleContainer {
   display: flex;
   border: solid #545149 4px;
