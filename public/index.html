@@ -15,8 +15,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
     rel="stylesheet">
-  <script src="https://kit.fontawesome.com/76797eb732.js" crossorigin="anonymous"></script>
 
+  <!-- External Libraries -->
+  <script src="https://kit.fontawesome.com/76797eb732.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -57,8 +59,8 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <div id="composeTitle">
-        <h2>Compose Tweet</h2>
+      <div id="errorMessage">
+        <!-- <h2></h2> -->
       </div>
       <form class="tweetForm" method="POST" action="/tweets/">
         <div class="formAndLabel">
@@ -66,28 +68,12 @@
           <textarea name="text" id="tweet-text" width="2" cols="80"></textarea>
         </div>
         <div class="buttonAndCounter">
-          <button type="submit">Tweet</button>
+          <button id="submitButton" type="submit">Tweet</button>
           <output name="counter" id="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
     <article class="tweetContainer">
-      <!-- <header class="articleHeader">
-        <div class="articleFirstName">
-          <i>"fa-regular fa-face-kiss-wink-heart"</i>
-          <p>Sarah</p>
-        </div>
-        <p class="articleUsername">@VoteForSarah</p>
-      </header>
-      <h6>Please vote for me!</h6>
-      <footer class="articleFooter">
-        <p>10 days ago</p>
-        <ul>
-          <li><i class="fa-solid fa-flag"></i></li>
-          <li><i class="fa-sharp fa-solid fa-retweet"></i></li>
-          <li><i class="fa-solid fa-heart"></i></li>
-        </ul>
-      </footer> -->
     </article>
   </main>
 </body>

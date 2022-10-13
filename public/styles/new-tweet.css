@@ -2,17 +2,32 @@
   width: 100%;
 }
 
-#composeTitle {
+#errorMessage {
+  width: 100%;
+  height: 80px;
+  border: solid red 4px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 16px;
+  display: none;
 }
 
 .formAndLabel {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
   border-bottom: dotted grey 4px;
   padding-bottom: 16px;
+  padding-top: 100px;
+}
+
+#tweet-text {
+  background-color: transparent;
+  border: none;
+  resize: none;
+  outline: none;
 }
 
 .buttonAndCounter {
