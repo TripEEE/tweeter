@@ -45,37 +45,39 @@
       <i class="fa-solid fa-angles-down"></i>
     </div>
   </nav>
-  <header class="header-top">
-    <div id="avatarAndName">
-      <div>
-        <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div>
-        <h2>Sarah Palin</h2>
-      </div>
-    </div>
-  </header>
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <div id="errorMessage">
-        <h2></h2>
-      </div>
-      <form class="tweetForm" method="POST" action="/tweets/">
-        <div class="formAndLabel">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" width="2" cols="80"></textarea>
+  <div class="headerAndTweetContainer">
+    <header class="header-top">
+      <div id="avatarAndName">
+        <div>
+          <img src="/images/profile-hex.png">
         </div>
-        <div class="buttonAndCounter">
-          <button id="submitButton" type="submit">Tweet</button>
-          <output name="counter" id="counter" for="tweet-text">140</output>
+        <br>
+        <div>
+          <h2>Sarah Palin</h2>
         </div>
-      </form>
-    </section>
-    <article class="tweetContainer">
-    </article>
-  </main>
+      </div>
+    </header>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <div id="errorMessage">
+          <h2></h2>
+        </div>
+        <form class="tweetForm" method="POST" action="/tweets/">
+          <div class="formAndLabel">
+            <label for="tweet-text">What are you humming about?</label>
+            <input name="text" id="tweet-text" width="2" cols="80" />
+          </div>
+          <div class="buttonAndCounter">
+            <button id="submitButton" type="submit">Tweet</button>
+            <output name="counter" id="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <article class="tweetContainer">
+      </article>
+    </main>
+  </div>
 </body>
 
 </html>

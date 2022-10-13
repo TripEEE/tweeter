@@ -39,3 +39,24 @@ body {
   margin-left: 5%;
   background-color: #f4f1ec;
 }
+
+@media only screen and (min-width: 1024px) {
+
+  .headerAndTweetContainer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 120px;
+  }
+
+  .header-top {
+    max-width: 40%;
+    float: left;
+    margin: 100px 0px;
+  }
+
+  .container {
+    max-width: 60%;
+    float: right;
+  }
+
+}
