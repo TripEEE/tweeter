@@ -5,6 +5,8 @@ $(document).ready(function () {
     $bottomOfTweet = $("#counter")
     if (remainingChar < 0) {
       $($bottomOfTweet).css("color", "red")
+    } else {
+      $($bottomOfTweet).css("color", "black")
     }
     $bottomOfTweet.text(remainingChar)
   })

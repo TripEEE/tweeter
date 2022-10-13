@@ -6,32 +6,36 @@
 $(document).ready(function () {
   //FORM SUBMIT HANDLER 
 
-  const escape = function (str) {
+  const escape = function (str) { //safety check
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  //the below line needs to be changed so user can submit with enter
   $(".tweetForm").submit(function (event) {
     event.preventDefault()
-    // const str = $(this).serialize()
 
+    $("#errorMessage").css("display", "none")
 
     const formBody = $('#tweet-text').val()
-    const safeHTML = `<p>${escape(formBody)}</p>`;
-    console.log(safeHTML)
+    const safeHTML = `${escape(formBody)}`;
+    console.log(safeHTML.length)
 
 
     if (safeHTML === "") {
-      alert("Error! Please input a string!")
+      $("#errorMessage").css("display", "block")
+      $("#errorMessage").html("Error! Please input text!")
       return
     }
     if (safeHTML === null) {
-      alert("Error! Your tweet has an invalid value of null!")
+      $("#errorMessage").css("display", "block")
+      $("#errorMessage").html("Error! Your tweet has an invalid value of null!")
       return
     }
-    if (safeHTML.length > 140) {
-      alert("Error! Character limit exceeded!")
+    if (safeHTML.length > 140) { //this is currently only alerting when tweet is submitted
+      $("#errorMessage").css("display", "block")
+      $("#errorMessage").html("Error! Your character limit has been exceeded!")
       return
     }
 
