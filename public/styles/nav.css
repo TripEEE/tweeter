@@ -3,7 +3,6 @@ nav {
   width: 100%;
   background-color: goldenrod;
   background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
-  /* background-color: #4056A1; */
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -11,12 +10,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-
 }
-
 nav span {
   color: #FFFFFF;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
 }
 
 #navRight {

@@ -40,7 +40,7 @@ $(document).ready(function () {
     }
 
     $.ajax({
-      beforeSend: function (req) {
+      beforeSend: function (req) { //prevents CORS error
         req.setRequestHeader("Access-Control-Allow-Origin", "*")
       },
       url: "/tweets",
@@ -53,6 +53,9 @@ $(document).ready(function () {
         loadTweets() //loads existing tweets so no refresh is necessary
       }
     })
+
+    $("#counter").val(140) //resets counter
+
     return false
   })
 

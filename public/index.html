@@ -53,7 +53,7 @@
         </div>
         <br>
         <div>
-          <h2>Sarah Palin</h2>
+          <h2>Angela Merkel</h2>
         </div>
       </div>
     </header>
@@ -61,11 +61,12 @@
     <main class="container">
       <section class="new-tweet">
         <div id="errorMessage">
-          <h2></h2>
         </div>
         <form class="tweetForm" method="POST" action="/tweets/">
+          <!-- added div on line 67 and line 71 for flexbox -->
           <div class="formAndLabel">
             <label for="tweet-text">What are you humming about?</label>
+            <!-- used input below instead of textarea so that user could submit with enter key -->
             <input name="text" id="tweet-text" width="2" cols="80" />
           </div>
           <div class="buttonAndCounter">
