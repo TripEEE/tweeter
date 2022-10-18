@@ -12,7 +12,6 @@ $(document).ready(function () {
     return div.innerHTML;
   };
 
-  //the below line needs to be changed so user can submit with enter
   $(".tweetForm").submit(function (event) {
     event.preventDefault()
 
@@ -20,8 +19,6 @@ $(document).ready(function () {
 
     const formBody = $('#tweet-text').val()
     const safeHTML = `${escape(formBody)}`;
-    console.log(safeHTML.length)
-
 
     if (safeHTML === "") {
       $("#errorMessage").css("display", "block")
@@ -48,9 +45,12 @@ $(document).ready(function () {
       //looks through all tweet-texts in the html, only finds one cuz #, 
       //we use the index to grab that element, and then return .value
       data: { text: safeHTML },
-      success: function () { //on a success
+      success: function (response) { //on a success
+        console.log(response)
         $('#tweet-text').val("") //resets the textarea to ""
-        loadTweets() //loads existing tweets so no refresh is necessary
+        // loadAllTweets() //loads existing tweets so no refresh is necessary
+        let newTweet = createTweetElement(response.tweet)
+        $(".tweetContainer").prepend(newTweet)
       }
     })
 
@@ -85,18 +85,19 @@ $(document).ready(function () {
   }
 
   const renderTweets = function (tweets) {
+    $(".tweetContainer").empty() //prevents the existing tweets from being duplicated on page refresh
     for (let tweet of tweets) {
       let newTweet = createTweetElement(tweet)
       $(".tweetContainer").prepend(newTweet)
     }
   }
 
-  const loadTweets = function () {
+  const loadAllTweets = function () {
     $.ajax("/tweets", { method: "GET" })
       .then(function (JSONResponse) { //JSONResponse is the server database
         renderTweets(JSONResponse) //renderTweets then calls the server database
       })
   }
 
-  loadTweets()
+  loadAllTweets()
 })

@@ -24,6 +24,15 @@
   border-bottom: dotted grey 4px;
   padding-bottom: 16px;
   padding-top: 100px;
+  flex-wrap: wrap;
+
+}
+
+#wrapNewTweet {
+  display: flex;
+  /* word-wrap: break-word;
+  word-break: break-all; */
+
 }
 
 #tweet-text {
@@ -31,6 +40,8 @@
   border: none;
   resize: none;
   outline: none;
+  overflow-wrap: break-word;
+  width: 100%;
 }
 
 .buttonAndCounter {
